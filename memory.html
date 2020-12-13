@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css" />
+<script type="text/javascript" src="game.js"></script>
+<title>Memory</title>
+</head>
+<body>
+	<h1> MEMORY CARTES A JOUER </h1>
+	<table id="tapis">
+	<tr>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+	</tr>
+	<tr>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+	</tr>
+	<tr>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+	</tr>
+	<tr>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+		<td><img src="cartespng/backside.png"/></td>
+	</tr>
+	
+	<script>
+		var motifsCartes=["1C","1P","1S","1T","DC","DP","DS","DT","RC","RP","RS","RT","VC","VP","VS","VT","XC","XP","XS","XT"];
+		var etatsCartes=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		var cartesRetournees=[];
+		var nbPairesTrouvees=0;
+		var imgCartes=document.getElementById("tapis").getElementsByTagName("img");
+		for(var i=0;i<imgCartes.length;i++){
+			imgCartes[i].noCarte=i; //Ajout de la propriété noCarte à l'objet img
+			imgCartes[i].onclick=function(){
+					controleJeu(this.noCarte);
+			}                      
+		}
+		initialiseJeu();
+	</script>
+</body>
+</html>
